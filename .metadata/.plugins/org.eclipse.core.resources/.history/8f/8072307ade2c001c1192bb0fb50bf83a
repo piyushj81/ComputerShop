@@ -1,0 +1,19 @@
+package com.shop.dto;
+
+public class Admin {
+	private String id;
+	private String phone;
+	private String cname;
+	private String pic;
+	private String pname;
+	private int model;
+	private String price;
+	private String address;
+	private String city;
+	private String pincode;
+	private String state;
+	
+	
+	
+	
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+D:\Advance java\Computershop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\351611121.index
+\computershop\src
+D:\Advance java\Computershop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1440833281.index
+\computershop\src
+D:\Advance java\Computershop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\881085292.index
+\Foodshop\src

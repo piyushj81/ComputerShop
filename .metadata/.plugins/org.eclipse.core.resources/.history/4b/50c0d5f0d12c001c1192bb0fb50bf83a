@@ -1,0 +1,81 @@
+<%@page import="com.computershop.controller.cart"%>
+<%@page import="com.shop.dto.Cart"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="com.shop.dto.Customer"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>user cart details</title>
+</head>
+<body>
+<%
+
+Class.forName("com.mysql.jdbc.Driver");
+Customer cst = null;
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shop", "root", "root");
+try {
+	PreparedStatement ps = con.prepareStatement("Select * from customerlogin where username= ? ");
+	ps.setString(1, (String) session.getAttribute("user"));
+
+	ResultSet rs = ps.executeQuery();
+	if (rs.next()) {
+		cst = new Customer(rs.getString("username"), rs.getString("phone"), rs.getString("password"));
+	}
+} catch (Exception e) {
+	e.printStackTrace();
+}
+
+ArrayList<Cart> list2 = (ArrayList<Cart>) request.getAttribute("list2");
+						if (!(list2 == null) || !(list2.isEmpty())) {
+			
+
+					%>
+				
+				<table style="width:175%;text-align:center; color:white;"    class="table table-hover table-dark tablesm"   >
+					<tr>
+						<th>PHONE</th>
+						<th>IMAGE</th>
+						<th>PRODUCT ID</th>
+						<th>PRODUCT NAME</th>
+						<th>MODEL NUMBER</th>
+						<th>PRICE</th>
+						
+					</tr>
+					<%
+					for (Cart ct : list2) {
+					%>
+
+					<tr>
+					
+						<td><%=ct.getPhone() %></td>
+						<td> <img alt="" src="<%=ct.getPic()%>"style ="max-height:50%; max-width:70%"> </td>
+						<td><%=ct.getId() %></td>
+						<td><%=ct.getPname() %></td>
+						<td><%=ct.getModel()%></td>
+						<td><%=ct.getPrice()%></td>
+	
+				</tr>			
+									
+													
+					<%
+					}
+					%>
+
+
+				</table>
+
+				<%
+			}else {
+				out.println("LIST NOT AVAILAIBLE");
+
+				}
+				%>
+		</body>
+</html>

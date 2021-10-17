@@ -1,0 +1,85 @@
+<%@page import="com.shop.dto.Admin"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.shop.dto.Customer"%>
+<%@page import="com.shop.dto.Cart"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Shopping Details</title>
+</head>
+<body>
+
+
+<% 
+ArrayList<Admin> list2 = (ArrayList<Admin>) request.getAttribute("LIST");
+
+		if (!(list2 != null) || !(list2.isEmpty())) {
+		
+		
+			
+		%>
+			<table style="width:175%;text-align:center; color:white;"    class="table table-hover table-dark tablesm"   >
+	<tr>
+		<th>Product ID</th>
+		<th>Phone</th>
+		<th>Customer Name </th>
+		<th>Pic</th>
+		<th>Product Name</th>
+		<th>Model</th>
+		<th>Price</th>
+		<th>Address</th>			
+		<th>City</th>
+		
+		<th>State</th>
+		
+	</tr>
+	<%
+	for (Admin a : list2) {
+	%>
+
+	<tr>
+	
+		<td><%=a.getId() %></td>
+		<td><%=a.getPhone() %></td>
+		<td><%=a.getCname() %></td>
+		
+		<td><%=a.getPname() %></td>
+		<td><%=a.getModel() %></td>
+		<td><%=a.getPrice()  %></td>
+		<td><%=a.getAddress() %></td>
+		
+		<td><%=a.getCity() %></td>
+		
+		<td><%=a.getState()%></td>
+
+</tr>			
+
+</table>														
+<%}
+	
+	
+	%>	
+
+
+		
+	
+	<% 
+}else {  %>
+out.println("List not available");
+
+
+
+	
+
+<% }%>
+	
+	
+</body>
+</html>

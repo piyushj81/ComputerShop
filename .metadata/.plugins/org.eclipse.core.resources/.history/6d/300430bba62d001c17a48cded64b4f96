@@ -1,0 +1,45 @@
+package com.computershop.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.shop.dto.Admin;
+import com.shop.modeldao.CustomerModel;
+@WebServlet("/deleteadminuser")
+public class deleteadminuser extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String phone = request.getParameter("phone");
+		String cname = request.getParameter("cname");
+		
+		CustomerModel model = new CustomerModel();
+		int i = model.deleteproductinadmindelivery(phone,cname);
+		
+		ArrayList<Admin> list1 = model.getshoppingDetails(phone);
+
+		
+		if(i!=0) {
+			
+			RequestDispatcher rd = request.getRequestDispatcher("usershoppingdetails.jsp");
+			request.setAttribute("msg", "Item Deleted from your cart which will  not be deliverd");
+			request.setAttribute("details", list1);
+			rd.forward(request, response);
+		}
+
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	
+	
+	}
+
+}

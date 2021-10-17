@@ -1,0 +1,11 @@
+package com.shop.dto;
+
+public class Form {
+	private String phone;
+	
+	private String address;
+	private String pincode;
+	private String city;
+	private String state;
+	
+}

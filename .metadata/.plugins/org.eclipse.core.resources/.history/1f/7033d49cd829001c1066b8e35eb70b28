@@ -1,0 +1,41 @@
+package com.computershop.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.shop.dto.shop;
+import com.shop.modeldao.CustomerModel;
+
+@WebServlet("/shopnow")
+public class shopnow extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			shop s = new shop();
+			String id = request.getParameter("id");
+			
+			System.out.println(s.getId()+  " id isefdfdf");
+			shop s = new shop();
+			CustomerModel model = new CustomerModel();
+			s = model.selectshoppingDetailsfromcarttable(id);
+			System.out.println(s.getPic()+  " "+s.getPname()+ " " +s.getPhone());
+			int i = model.insertshoppingDetails(id,s); 
+			if(i!=0) {
+				response.sendRedirect("shopnowform.jsp");
+						
+			}else {
+		response.sendRedirect("home.jsp");
+			}
+	
+	}
+	
+	
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

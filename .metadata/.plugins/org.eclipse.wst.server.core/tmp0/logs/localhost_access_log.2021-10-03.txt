@@ -1,0 +1,15 @@
+127.0.0.1 - - [03/Oct/2021:12:47:21 +0530] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [03/Oct/2021:12:47:23 +0530] "GET /computershop/ HTTP/1.1" 200 6058
+127.0.0.1 - - [03/Oct/2021:12:47:24 +0530] "GET /computershop/computershop.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Oct/2021:12:47:24 +0530] "GET /computershop/images/1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/Oct/2021:12:47:24 +0530] "GET /computershop/images/logo.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/Oct/2021:12:47:24 +0530] "GET /computershop/images/3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/Oct/2021:12:47:24 +0530] "GET /computershop/images/2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/Oct/2021:12:47:24 +0530] "GET /computershop/images/6.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/Oct/2021:12:47:24 +0530] "GET /computershop/images/5.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/Oct/2021:12:47:24 +0530] "GET /computershop/images/7.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/Oct/2021:12:47:24 +0530] "GET /computershop/images/10.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/Oct/2021:12:47:26 +0530] "GET /favicon.ico HTTP/1.1" 404 1016
+127.0.0.1 - - [03/Oct/2021:12:48:30 +0530] "GET /computershop/home.jsp HTTP/1.1" 200 6181
+127.0.0.1 - - [03/Oct/2021:12:48:35 +0530] "GET /computershop/customerAdmit.jsp HTTP/1.1" 200 5990
+127.0.0.1 - - [03/Oct/2021:12:50:48 +0530] "GET /computershop/home.jsp HTTP/1.1" 200 6181
